@@ -554,6 +554,8 @@ input, select, textarea {
 			width: 25%;
 		}
 
+
+
 		.row > .off-6 {
 			margin-left: 50%;
 		}
@@ -1996,7 +1998,6 @@ input, select, textarea {
 
 	section, article {
 		margin-bottom: 3em;
-		opacity:0;
 	}
 
 		section > :last-child, section:last-child, article > :last-child, article:last-child {
@@ -2375,6 +2376,7 @@ input, select, textarea {
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
+			margin-right: 10px;
 		}
 
 		.icon:before {
@@ -2495,15 +2497,15 @@ input, select, textarea {
 		  color: #fff;
 		  text-align: left;
 		  padding-left: 10px;
-		  font-size: 1.1rem;
-		  padding-top: 3px;
+		  font-size: 1.0rem;
+			padding-top: 3px;
 		}
 
 		.progressbar{
 		  position: relative;
 		  width: 600px;
 		  height: 20px;
-		  border: 2px solid #48CFAD;
+		  border: 2px solid #2c3e50;
 		  border-radius: 20px;
 		  margin-top: 7px;
 		  overflow: hidden;
@@ -2516,7 +2518,7 @@ input, select, textarea {
 		  width: 100%;
 		  height:10px;
 		  left: -100%;
-		  background-color:  #48CFAD;
+		  background-color:  #2c3e50;
 		  border-radius: 20px;
 		  margin: 2.7px;
 		}
@@ -2536,14 +2538,9 @@ input, select, textarea {
 		  transition: 1.4s;
 		}
 
-		section[data-scroll="in"]{
+		img[data-scroll="in"]{
 		  opacity: 1;
 		  transition: 1s ease-in-out;
-		}
-
-		img:hover{
-			transform: scale(1.2);
-			transition: 1s ease-in-out;
 		}
 
 		.image{
@@ -2553,7 +2550,7 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/wanwanarh.jpg");
+		background-image: url("../../images/bg1.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
@@ -2561,7 +2558,16 @@ input, select, textarea {
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
+		animation: changebg 20s infinite;
 	}
+
+	@keyframes changebg {
+  0% {background-image: url("../../images/bg1.jpg");}
+	25% {background-image: url("../../images/bg2.jpg");}
+	50% {background-image: url("../../images/bg3.jpg");}
+	75% {background-image: url("../../images/bg4.jpg");}
+	100% {background-image: url("../../images/bg1.jpg");}
+}
 
 		#header:before {
 			content: '';
@@ -2642,10 +2648,10 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			opacity: 0;
-			-moz-transition: opacity 2.5s ease-in-out;
-			-webkit-transition: opacity 2.5s ease-in-out;
-			-ms-transition: opacity 2.5s ease-in-out;
-			transition: opacity 2.5s ease-in-out;
+			-moz-transition: opacity 1.5s ease-in-out;
+			-webkit-transition: opacity 1.5s ease-in-out;
+			-ms-transition: opacity 1.5s ease-in-out;
+			transition: opacity 1.5s ease-in-out;
 			-moz-transition-delay: 0.5s;
 			-webkit-transition-delay: 0.5s;
 			-ms-transition-delay: 0.5s;
@@ -2901,6 +2907,18 @@ input, select, textarea {
 			text-align: right;
 			margin: -3.5em 4em 0 0;
 			width: 50%;
+		}
+
+		#header .inner{
+			-moz-transition: opacity 0.5s ease, -moz-transform 1s ease;
+			-webkit-transition: opacity 0.5s ease, -webkit-transform 1s ease;
+			-ms-transition: opacity 0.5s ease, -ms-transform 1s ease;
+			transition: opacity 0.5s ease, transform 1s ease;
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			opacity: 1;
 		}
 
 			#header1 .content > :last-child {
@@ -3165,8 +3183,9 @@ input, select, textarea {
 				transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 			}
 
-				#nav > ul > li.active {
-					border-color: rgba(192, 192, 192, 0.35);
+				#nav > ul > li.active,
+				#nav > ul > li:hover {
+					border-color: rgba(192, 192, 192, 0.85);
 				}
 
 				#nav > ul > li > a, #nav > ul > li > span {
@@ -3977,3 +3996,49 @@ input, select, textarea {
 					}
 
 	}
+
+.enlarge,
+.enlarge[data-scroll="out"]{
+	opacity:0;
+	transform: scale(0.8);
+}
+
+.enlarge[data-scroll="in"]{
+	opacity: 1;
+	transition: 1.5s ease-in-out;
+	transform: scale(1);
+}
+
+.fromleft,
+.fromleft[data-scroll="out"]{
+	opacity:0;
+	transform: translateX(-100px);
+}
+
+.fromleft[data-scroll="in"]{
+	opacity: 1;
+	transition: 1s ease-in-out;
+	transform: translateX(0);
+}
+
+.fromright,
+.fromright[data-scroll="out"]{
+	opacity:0;
+	transform: translateX(100px);
+}
+
+.fromright[data-scroll="in"]{
+	opacity: 1;
+	transition: 1s ease-in-out;
+	transform: translateX(0);
+}
+
+.frombottom{
+	opacity: 1;
+	transition: 1s ease-in-out;
+	transform: translateY(0);
+}
+
+.marginzero{
+	margin: 0;
+}
