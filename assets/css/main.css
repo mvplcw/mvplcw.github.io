@@ -30,10 +30,17 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+	#logo{
+		mix-blend-mode: difference;
+	}
 
 
 body {
 	line-height: 1;
+}
+
+html, body {
+    background-color: #fff;
 }
 
 ol, ul {
@@ -2550,23 +2557,32 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/bg1.jpg");
+		/* background-image: url("../../images/bg1.jpg");
 		background-size: cover;
 		background-position: center center;
-		background-attachment: fixed;
+		background-attachment: fixed; */
 		color: #fff;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
-		animation: changebg 20s infinite;
+		/* animation: changebg 20s infinite; */
 	}
 
-	@keyframes changebg {
+	/* @keyframes changebg {
   0% {background-image: url("../../images/bg1.jpg");}
 	33% {background-image: url("../../images/bg2.jpg");}
 	66% {background-image: url("../../images/bg3.jpg");}
 	100% {background-image: url("../../images/bg1.jpg");}
-}
+} */
+
+#myVideo {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+  }
+  
 
 		#header:before {
 			content: '';
